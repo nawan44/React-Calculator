@@ -5,7 +5,7 @@ class Increment1 extends React.Component {
     render() {
         const { functionIncrement1 } = this.props
         return (
-            <button onClick={functionIncrement1}>Increment Score 1</button>
+            <button onClick={functionIncrement1}>Increment Value 1</button>
         )
     }
 }
