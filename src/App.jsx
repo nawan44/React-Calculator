@@ -1,25 +1,42 @@
 import React from 'react';
-import IncrementNilai1 from './Component/IncrementNilai1';
-import IncrementNilai2 from './Component/IncrementNilai2';
+import Increment1 from './Component/Increment1';
+import Increment2 from './Component/Increment2';
+import Decrement1 from './Component/Decrement1';
+import Decrement2 from './Component/Decrement2';
 
 class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            nilai1: 1,
-            nilai2: 2,
+            score1: 1,
+            score2: 2,
             hasil: 0
         }
     }
 
-    functionIncrementNilai1 = () => {
+    functionIncrement1 = () => {
         this.setState({
-            nilai1: parseInt(this.state.nilai1) + 1
+            score1: parseInt(this.state.score1) + 1
         })
     }
-    functionIncrementNilai2 = () => {
+    functionIncrement2 = () => {
         this.setState({
-            nilai1: parseInt(this.state.nilai2) + 1
+            score2: parseInt(this.state.score2) + 1
+        })
+    }
+    functionDecrement1 = () => {
+        this.setState({
+            score1: parseInt(this.state.score1) - 1
+        })
+    }
+    functionDecrement2 = () => {
+        this.setState({
+            score2: parseInt(this.state.score2) - 1
+        })
+    }
+    functionChange = name => ({ target: { value } }) => {
+        this.setState({
+            [name]: value
         })
     }
 
@@ -28,16 +45,19 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                Selamat Datang di React JS CFH
+                <h1>React JS Calculator</h1>
 
-                <p> {this.state.nilai1} </p>
-                <p> {this.state.nilai2} </p>
+                <p> {this.state.score1} </p>
+                <p> {this.state.score2} </p>
 
-                Nilai 1 : <input type="number" onChange={this.functionChange('nilai1')} /> <br />
-                Nilai 2 : <input type="number" onChange={this.functionChange('nilai2')} />
+                Score 1 : <input type="number" onChange={this.functionChange('score1')} /> <br />
+                Score 2 : <input type="number" onChange={this.functionChange('score2')} /><br />
 
-                <IncrementNilai1 functionIncrement={this.functionIncrementNilai1} />
-                <IncrementNilai2 functionIncrement={this.functionIncrementNilai2} />
+                <Increment1 functionIncrement1={this.functionIncrement1} /><br />
+                <Decrement1 functionDecrement1={this.functionDecrement1} /><br />
+
+                <Increment2 functionIncrement2={this.functionIncrement2} /><br />
+                <Decrement2 functionDecrement2={this.functionDecrement2} /><br />
 
 
             </div>
