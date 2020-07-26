@@ -5,7 +5,7 @@ class Minus extends React.Component {
     render() {
         const { functionMinus } = this.props
         return (
-            <button onClick={functionMinus}>-</button>
+            <button className="btn-operator" onClick={functionMinus}>-</button>
         )
     }
 }

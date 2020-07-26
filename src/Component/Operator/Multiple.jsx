@@ -5,7 +5,7 @@ class Multiple extends React.Component {
     render() {
         const { functionMultiple } = this.props
         return (
-            <button onClick={functionMultiple}>*</button>
+            <button className="btn-operator" onClick={functionMultiple}>*</button>
         )
     }
 }

@@ -5,7 +5,7 @@ class Modulus extends React.Component {
     render() {
         const { functionModulus } = this.props
         return (
-            <button onClick={functionModulus}>%</button>
+            <button className="btn-operator" onClick={functionModulus}>%</button>
         )
     }
 }

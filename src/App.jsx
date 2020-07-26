@@ -10,7 +10,8 @@ import Devide from './Component/Operator/Devide';
 import Modulus from './Component/Operator/Modulus';
 import Headers from './Component/header';
 import Footers from './Component/footer';
-
+import './Component/Operator/operatorStyle.css';
+import './Component/componentStyle.css';
 
 
 class App extends React.Component {
@@ -80,31 +81,35 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Headers/>                <h1>React JS Calculator</h1>
+                <Headers/>                
+                <div className="form">
+                Value 1 : <br/>
+                <p className="value">     {this.state.score1} </p> 
+                Value 2 : <br/>
+                <p className="value">  {this.state.score2} </p>
 
-                <p> Value 1 : <br/>
-                    {this.state.score1} </p> 
-                <p> Value 2 : <br/>
-                    {this.state.score2} </p>
+                Result : <br/>
+                <p className="value">     {this.state.yield} </p>
+                </div>
+                <p className="inputValue">
+                Input Value 1 : <input type="number" onChange={this.functionChange('score1')} /></p> 
+                <p className="inputValue">
+                Input Value 2 : <input type="number" onChange={this.functionChange('score2')} /></p>
+                <br />
+                <hr style={{marginBottom:"10px"}} />
 
-                <p> Result : <br/>
-                    {this.state.yield} </p>
-
-                Value 1 : <input type="number" onChange={this.functionChange('score1')} /> <br />
-                Value 2 : <input type="number" onChange={this.functionChange('score2')} /><br />
-
-
-                <Increment1 functionIncrement1={this.functionIncrement1} /><br />
+                <Increment1 functionIncrement1={this.functionIncrement1} />
                 <Decrement1 functionDecrement1={this.functionDecrement1} /><br />
 
-                <Increment2 functionIncrement2={this.functionIncrement2} /><br />
+                <Increment2 functionIncrement2={this.functionIncrement2} />
                 <Decrement2 functionDecrement2={this.functionDecrement2} /><br />
+                <br />
 
-                <Plus functionPlus={this.functionPlus}/> <br />
-                <Minus functionMinus={this.functionMinus}/> <br />
-                <Multiple functionMultiple={this.functionMultiple}/> <br />
-                <Devide functionDevide={this.functionDevide}/> <br />
-                <Modulus functionModulus={this.functionModulus}/> <br />
+                <Plus functionPlus={this.functionPlus}/>
+                <Minus functionMinus={this.functionMinus}/> 
+                <Multiple functionMultiple={this.functionMultiple}/> 
+                <Devide functionDevide={this.functionDevide}/> 
+                <Modulus functionModulus={this.functionModulus}/> 
                 <Footers/>
             </div>
         )

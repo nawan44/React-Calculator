@@ -5,7 +5,7 @@ class Decrement2 extends React.Component {
     render() {
         const { functionDecrement2 } = this.props
         return (
-            <button onClick={functionDecrement2}>Decrement Value 2</button>
+            <button className="btn-ment" onClick={functionDecrement2}>Decrement Value 2</button>
         )
     }
 }

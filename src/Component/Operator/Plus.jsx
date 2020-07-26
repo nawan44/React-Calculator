@@ -5,7 +5,7 @@ class Plus extends React.Component {
     render() {
         const { functionPlus } = this.props
         return (
-            <button onClick={functionPlus}>+</button>
+            <button className="btn-operator" onClick={functionPlus}>+</button>
         )
     }
 }

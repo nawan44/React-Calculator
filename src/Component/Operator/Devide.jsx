@@ -5,7 +5,7 @@ class Devide extends React.Component {
     render() {
         const { functionDevide } = this.props
         return (
-            <button onClick={functionDevide}>/</button>
+            <button className="btn-operator" onClick={functionDevide}>/</button>
         )
     }
 }

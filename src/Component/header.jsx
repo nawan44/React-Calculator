@@ -5,7 +5,9 @@ class Headers extends React.Component {
 
     render() {
         return (
-            <div className="header">Header</div>
+            <div className="header"><h1>React JS Calculator
+                </h1>
+            </div>
         )
     }
 }
